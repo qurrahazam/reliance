@@ -84,7 +84,7 @@ export default function ServicesSection() {
       <div className="max-w-7xl mx-auto">
 
         <div className="mb-16">
-          <p className="text-xs font-semibold tracking-widest uppercase text-[#38b6ff] mb-3">
+          <p className="text-base font-semibold tracking-widest uppercase text-[#38b6ff] mb-3">
             What We Offer
           </p>
           <div className="w-14 h-[2px] bg-[#004aad] rounded-full mb-6" />
