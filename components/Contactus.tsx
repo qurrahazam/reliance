@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 
 export default function ContactSection() {
   const [agreed, setAgreed] = useState(false);
@@ -19,11 +20,34 @@ export default function ContactSection() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+
+
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
     if (!agreed) return;
-    console.log({ ...form, agreed });
-    alert("Form submitted! We'll get back to you shortly.");
+
+    try {
+      fetch(process.env.NEXT_PUBLIC_GOOGLE_SCRIPT_URL!, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, agreed }),
+      });
+
+      toast.success("Message sent! We'll get back to you shortly.", {
+        duration: 5000,
+      });
+
+      setForm({
+        name: "", businessName: "", email: "", phone: "",
+        monthlyBilling: "", providers: "1-5", totalAR: "", message: "",
+      });
+      setAgreed(false);
+
+    } catch (err) {
+      console.error(err);
+      toast.error("Something went wrong. Please try again.");
+    }
   };
 
   const inputClass = `
