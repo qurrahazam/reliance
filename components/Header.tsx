@@ -8,8 +8,6 @@ const navLinks = [
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
   { label: "Specialties", href: "/specialties" },
-  { label: "Gallery", href: "/gallery" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -50,7 +48,7 @@ export default function Header() {
             <Link
             key={link.href}
             href={link.href}
-            className="text-base font-medium text-gray-800 hover:text-gray-900 transition-colors duration-200 relative group"
+            className="text-sm font-medium text-gray-800 hover:text-gray-900 transition-colors duration-200 relative group"
             >
             {link.label}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-500 group-hover:w-full transition-all duration-300 rounded-full" />
