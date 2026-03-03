@@ -238,7 +238,7 @@ export default function ContactSection() {
                       Disclaimer
                     </p>
                     <p className="text-xs text-gray-700 leading-relaxed">
-                      By providing your number, you consent to receive SMS updates from Reliance Medical LLC. Message frequency may vary. Message & data rates may apply. Reply <strong>STOP</strong> to opt out anytime.
+                      By providing my mobile number, I consent to receive SMS notifications and alerts from Roots RCM LLC. Message frequency may vary. Message and data rates may apply. Text HELP to (832) 415-1884 for assistance. Reply STOP at any time to opt out. https://rootsrcm.com/privacy-policy/
                     </p>
                   </div>
                 </div>
